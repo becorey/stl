@@ -1,0 +1,15 @@
+<template name="layout">
+  <!-- <div class="meteorMessages">
+  	{{> meteorMessages}}
+  </div> -->
+
+  {{>yield region='header'}}
+
+  <div class="wrap content">
+  	{{> yield}}
+  </div>
+
+
+  {{>yield region='footer'}}
+
+</template>

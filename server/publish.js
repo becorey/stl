@@ -38,3 +38,5 @@ Projects.allow({
 		}
 	}
 });
+
+/* copy for each collection */

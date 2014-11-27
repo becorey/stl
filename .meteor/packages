@@ -7,10 +7,9 @@ meteor-platform
 iron:router
 accounts-base
 accounts-password
+deepwell:authorization
 joshowens:accounts-entry
 nooitaf:semantic-ui
 aldeed:autoform
 aldeed:collection2
 fourseven:scss
-mizzao:autocomplete
-deepwell:authorization

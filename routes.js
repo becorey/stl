@@ -28,6 +28,7 @@ Router.map(function () {
     onBeforeAction: function(){
       Session.set('routeName', 'Home');
       $('body').scrollTop(0);
+      this.next();
     }
   });
 
@@ -42,11 +43,12 @@ Router.map(function () {
       Session.set('projectName', this.params._projectName);
       return {
         projectName: this.params._projectName
-      }
+      };
     },
     onBeforeAction: function(){
       Session.set('routeName', 'Projects');
       $('body').scrollTop(0);
+      this.next();
     }
   });
 
@@ -57,6 +59,7 @@ Router.map(function () {
       if (!AuthManager.userIsInRole(Meteor.userId(), ['admin'])) {
         Router.go("/");
       }
+      this.next();
     }
   });
 });

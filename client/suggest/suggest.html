@@ -1,0 +1,43 @@
+<template name="suggest">
+
+	<h1>Meetup Suggestions</h1>
+
+	{{#each listSuggestions}}
+	<div class="ui card">
+		<div class="content">
+			<div class="header">
+				{{name}}
+			</div>
+			<div class="meta">
+				{{userName}}
+			</div>
+			<div class="description">
+				{{description}}
+			</div>
+		</div>
+		<div class="ui two bottom attached buttons">
+			<div class="ui button red">
+				<i class="thumbs down circular inverted big icon"></i>
+			</div>
+			<div class="ui button green">
+				<i class="thumbs up circular inverted big icon"></i>
+			</div>
+		</div>
+	</div>
+	<br>
+	{{/each}}
+
+	<br>
+	<div class="ui form">
+		{{#autoForm collection="Suggestions" id="insertSuggestionForm" type="insert"}}
+		<fieldset>
+			<legend>New Suggestion</legend>
+			{{>afQuickField class="field" name='name'}}
+			{{>afQuickField class="field" name='description' rows=5}}
+			<button type="submit" class="ui submit button">Submit</button>
+		</fieldset>
+
+		{{/autoForm}}
+	</div>
+
+</template>

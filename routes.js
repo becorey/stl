@@ -8,7 +8,8 @@ Router.configure({
   notFoundTemplate: '404',
   waitOn: function (){
     return [
-    Meteor.subscribe("Users")
+    Meteor.subscribe("Users"),
+    Meteor.subscribe("Suggestions")
     ];
   },
   data: function(){
@@ -36,19 +37,19 @@ Router.map(function () {
     path: '/news',
   });
 
-  this.route('project', {
-    path: 'project/:_projectName?',
-    template: 'project',
-    data: function(){
-      Session.set('projectName', this.params._projectName);
-      return {
-        projectName: this.params._projectName
-      };
-    },
+  this.route('profile', {
+    path: '/profile',
+  });
+
+  this.route('suggest', {
+    path: '/suggest',
+    template: 'suggest',
+
     onBeforeAction: function(){
-      Session.set('routeName', 'Projects');
+      Session.set('routeName', 'Suggest');
       $('body').scrollTop(0);
-      this.next();
+      AccountsEntry.signInRequired(this);
+      //this.next();
     }
   });
 

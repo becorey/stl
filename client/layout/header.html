@@ -1,3 +1,17 @@
 <template name="header">
-header
+	<div class="header">
+		<div class="ui menu">
+			<a class="item" href="/">
+				<i class="home icon"></i> Home
+			</a> 
+
+			<a class="item" href="/suggest">
+				<i class="idea icon"></i> Suggest Meetup
+			</a>
+
+			<div class="item right">
+				{{> accountButtons}}
+			</div>
+		</div>
+	</div>
 </template>

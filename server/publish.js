@@ -8,11 +8,11 @@ Meteor.publish("Users", function(){
 });
 
 
-Meteor.publish("Projects", function(){
-	return Projects.find();
+Meteor.publish("Suggestions", function(){
+	return Suggestions.find();
 });
 
-Projects.allow({
+Suggestions.allow({
 	insert: function(userId, doc){
 		var user = Meteor.users.find(userId);
 		if( AuthManager.userIsInRole(userId, ['admin']) ){
